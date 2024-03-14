@@ -8,8 +8,20 @@ for (let i = 0; i < 16; i++) {
 	}
 }
 
-const square = document.querySelector('.square')
+const squares = document.querySelectorAll('.square');
 
-square.addEventListener('mouseover', () => {
-	square.style.backgroundColor = "red";
+squares.forEach(square => {
+	square.addEventListener('mouseover', () => {
+		square.style.backgroundColor = "red";
+	});
+});
+
+const resetButton = document.createElement('button');
+resetButton.textContent = 'Reset';
+container.appendChild(resetButton);
+
+resetButton.addEventListener('click', () => {
+	squares.forEach(square => {
+		square.style.backgroundColor = "black";
+	});
 });
